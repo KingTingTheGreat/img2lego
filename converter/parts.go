@@ -5,6 +5,14 @@ type Color struct {
 	Name string
 }
 
+var BG_COLORS []Color = []Color{
+	{Hex: "#05131D", Name: "Black"},
+	{Hex: "#FFFFFF", Name: "White"},
+	{Hex: "#F6D7B3", Name: "LightNougat"},
+	{Hex: "#9B9A5A", Name: "OliveGreen"},
+	{Hex: "#E1D5ED", Name: "Lavender"},
+}
+
 var LEGO_COLORS []Color = []Color{
 	{Hex: "#4B9F4A", Name: "BrightGreen"},
 	{Hex: "#36AEBF", Name: "MediumAzur"},          // medium azure

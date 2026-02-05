@@ -1,8 +1,6 @@
 package converter
 
 import (
-	"fmt"
-
 	"github.com/kingtingthegreat/img2lego/util"
 	"github.com/kyroy/kdtree"
 	"github.com/kyroy/kdtree/points"
@@ -27,6 +25,5 @@ func InitLookup(colors []Color) *Lookup {
 
 func (l *Lookup) FindMostSimilar(rgb util.RGB) util.RGB {
 	closest := l.kdt.KNN(rgb.Data, 1)[0].(*points.Point3D)
-	fmt.Println(rgb, closest)
 	return util.RGB{Data: closest}
 }
