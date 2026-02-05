@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/:path((?!public/).*)", "destination": "api/index.go" },
+    { "source": "/public/:path*", "destination": "/:path*" }
+  ]
+}
