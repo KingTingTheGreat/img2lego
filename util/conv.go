@@ -1,6 +1,7 @@
 package util
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
@@ -34,13 +35,14 @@ func HexToRGB(hexStr string) RGB {
 }
 
 func RGBToHex(rgb RGB) string {
-	r := clampToU8(rgb.Data.X)
-	g := clampToU8(rgb.Data.Y)
-	b := clampToU8(rgb.Data.Z)
+	hex := fmt.Sprintf(
+		"#%02X%02X%02X",
+		clampToU8(rgb.Data.X),
+		clampToU8(rgb.Data.Y),
+		clampToU8(rgb.Data.Z),
+	)
 
-	return "#" + strconv.FormatUint(uint64(r), 16) +
-		strconv.FormatUint(uint64(g), 16) +
-		strconv.FormatUint(uint64(b), 16)
+	return strings.ToUpper(hex)
 }
 
 // clamp converts a float-ish channel into 0..255 safely.
